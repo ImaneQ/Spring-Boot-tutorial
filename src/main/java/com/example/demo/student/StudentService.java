@@ -25,7 +25,6 @@ public class StudentService {
         if (studentOptional.isPresent()) {
             throw new IllegalStateException("email taken");
         }
-
         studentRepository.save(student);
     }
 
@@ -56,7 +55,7 @@ public class StudentService {
             if (studentOptional.isPresent()) {
                 throw new IllegalCallerException("email taken");
             }
+            student.setEmail(email);
         }
-        student.setEmail(email);
     }
 }
